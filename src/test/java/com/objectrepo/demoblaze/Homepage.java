@@ -84,54 +84,36 @@ private WebElement samsunggalays6;
 
 @FindBy(xpath="//a[.='Delete']")
 private WebElement deletebutton;
-
-
-
 public WebElement getSamsunggalays6() {
 	return samsunggalays6;
 }
-
-
-
 public WebElement getDeletebutton() {
 	return deletebutton;
 }
-
-
-
 public WebElement getHomeLogin() {
 	return HomeLogin;
 }
-
 public WebElement getHomecart() {
 	return homecart;
 }
-
 public WebElement getHomeusername() {
 	return homeusername;
 }
-
 public WebElement getHomepassword() {
 	return homepassword;
 }
-
 public WebElement getuserlogin() {
-	return userlogin;
-	
+	return userlogin;	
 }
-
 public WebElement getAddtocart() {
 	return addtocart;
 }
-
 public WebElement getVerifylogin() {
 	return verifylogin;
 }
-
 public WebElement getLogout() {
 	return logout;
 }
-
 }
 
 

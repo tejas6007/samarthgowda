@@ -13,27 +13,26 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentTest;
 
 public class Eventlib implements ITestListener  {
-	
-public void onTestFailure(WebDriver driver,ITestResult result) {
-	
-//	TakesScreenshot tss = (TakesScreenshot) driver;
-//	File src = tss.getScreenshotAs(OutputType.FILE);
-//	File dst = new File("testOutput/Screenshotas/"+System.currentTimeMillis()+".png+");
-//	try {
-//		FileUtils.copyFile(src, dst);
-//	} catch (IOException e) {
-//		
-//		e.printStackTrace();
-////	}
-	
-	
-	//ExtentTest extentTest = new ExtentTest(null, null, null);
-//	extentTest.fail("testcase is failed "+result.getThrowable().toString());
-	
-	
-	
-	
-}
+
+	public void onTestFailure(WebDriver driver,ITestResult result) {
+		TakesScreenshot tss = (TakesScreenshot) driver;
+		File src = tss.getScreenshotAs(OutputType.FILE);
+		File dst = new File("testOutput/Screenshotas/"+System.currentTimeMillis()+".png+");
+		try {
+			FileUtils.copyFile(src, dst);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
+
+//		ExtentTest extentTest = new ExtentTest(null, null, null);
+	//	extentTest.fail("testcase is failed "+result.getThrowable().toString());
+
+
+
+
+	}
 
 
 }

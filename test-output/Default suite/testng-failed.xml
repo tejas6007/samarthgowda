@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.tesescripts.demoblaze.addtocart">
+      <class name="com.tesescripts.demoblaze.launchamazonc">
         <methods>
-          <include name="configBsTest"/>
-          <include name="configAMTest"/>
-          <include name="addtoCartTest"/>
-          <include name="configAstest"/>
-          <include name="configbmtest"/>
+          <include name="connct"/>
+          <include name="amazon"/>
+          <include name="after"/>
         </methods>
-      </class> <!-- com.tesescripts.demoblaze.addtocart -->
+      </class> <!-- com.tesescripts.demoblaze.launchamazonc -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

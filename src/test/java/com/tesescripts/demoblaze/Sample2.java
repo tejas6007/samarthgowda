@@ -4,11 +4,16 @@ import org.testng.annotations.Test;
 
 import com.genericlib.demoblaze.Base;
 @Test
+
 public class Sample2 extends Base 
 {
 	
+	
+	
 public void test4()
 {
+	System.out.println("chrome started sucessfully");
+	
 		driver.get("https://www.amazon.com");
 	System.out.println("i am ba ");
 	

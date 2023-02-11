@@ -10,12 +10,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.beust.jcommander.Parameter;
 import com.objectrepo.demoblaze.Homepage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -26,21 +30,23 @@ public Filelib fl=new Filelib();
 public String propath="src/test/resources/commondataproperties";
 public commonutils cu=new commonutils();
 public  Homepage hp;
-public   ExtentReports extent;
-public  ExtentSparkReporter spark;
-public  ExtentTest test;
+public   static ExtentReports extent;
+public  static ExtentSparkReporter spark;
+public  static ExtentTest test;
 
-@BeforeSuite
+//@Parameters("browser")
+@BeforeTest
 public void  configBsTest() throws IOException
 {	extent=new ExtentReports();//create obeject fro extenet report
 	spark=new ExtentSparkReporter("Samarth_Demoblaze.html");//extnds spark reporter is one of the format
 	extent.attachReporter(spark);//we are attcjing to ecxtent report
-	if(fl.getDAtafrompropertyfile(propath, "browser").equals("FireFox"))
+	if(fl.getDAtafrompropertyfile(propath, "browser").equals("Firefox"))
 	{
 	WebDriverManager.chromedriver().setup();
 	 driver=new FirefoxDriver();
 	}
-	if(fl.getDAtafrompropertyfile(propath, "browser").equals("edge"))
+	
+	//if(browsername.equals("edge"))
 	{
 	WebDriverManager.chromedriver().setup();
 	driver=new EdgeDriver();
@@ -63,7 +69,7 @@ public void configAMTest() throws IOException {
 hp.getLogout().click();;
 test.pass("logged out  demo blaze as as"+fl.getDAtafrompropertyfile(propath, "uername"));
 }
-@AfterSuite
+@AfterTest
 public void configAstest() {
 driver.quit();
 test.pass("close the browser");
